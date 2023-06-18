@@ -18,4 +18,4 @@ export const amiibosSlice =  createSlice({
 
 })
 
-export default postsSlice.reducer
+export default amiibosSlice.reducer
