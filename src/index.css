@@ -16,6 +16,30 @@ h1, h2, p {
   margin: 0 auto;
 }
 
+/* Header */
+.header-container {
+  display: inline-flex;
+  justify-content: center;
+  column-gap: 20rem;
+  width: 100%;
+}
+
+.header-container img {
+  height: 45rem;
+}
+
+.header-container nav {
+  display: flex;
+  flex-direction: column;
+  font-size: 10rem;
+  justify-content: center;
+}
+
+.header-container nav a {
+  text-decoration: none;
+  color: black;
+}
+
 .amiibo-tile-container {
   display: flex;
   flex-wrap: wrap;
