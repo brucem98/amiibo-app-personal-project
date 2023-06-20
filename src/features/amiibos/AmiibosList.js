@@ -5,7 +5,7 @@ export const AmiibosList = () => {
     const amiibos = useSelector(state => state.amiibos)
 
     const renderedAmiibos = amiibos.map(amiibo => (
-        <article key={amiibo.id} className='amiibo-tile'>
+        <article key={amiibo.id} className="amiibo-tile">
             <h3>{amiibo.name}</h3>
             <img src={amiibo.image} alt={`${amiibo.name} Amiibo`}/>
             <div>
@@ -19,7 +19,7 @@ export const AmiibosList = () => {
     return (
         <>
             <h2>Amiibos</h2>
-            <section className='amiibo-tile-container'>
+            <section className="amiibo-tile-container">
                 {renderedAmiibos}
             </section>
         </>
