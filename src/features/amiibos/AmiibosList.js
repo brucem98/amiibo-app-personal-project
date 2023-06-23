@@ -18,7 +18,6 @@ export const AmiibosList = () => {
 
     return (
         <>
-            <h2>Amiibos</h2>
             <section className="amiibo-tile-container">
                 {renderedAmiibos}
             </section>
