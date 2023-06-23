@@ -44,7 +44,7 @@ h1, h2, p {
   color: black;
 }
 
-.amiibo-tile-container {
+.amiibo-tiles-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -58,6 +58,11 @@ h1, h2, p {
   width: 20rem;
   margin-top: 2rem;
   border: 3px solid transparent;
+}
+
+.amiibo-tile a {
+  text-decoration: none;
+  color: black;
 }
 
 .amiibo-tile:hover {
