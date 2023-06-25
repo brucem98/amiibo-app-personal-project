@@ -7,13 +7,8 @@ html {
   padding: 0;
 }
 
-h1, h2, p {
+h1, h2, h3, p {
   text-align: center;
-}
-
-.App {
-  width: 70%;
-  margin: 0 auto;
 }
 
 .main-section {
@@ -43,6 +38,8 @@ h1, h2, p {
   text-decoration: none;
   color: black;
 }
+
+/* Amiibos List  */
 
 .amiibo-tiles-container {
   display: flex;
@@ -86,4 +83,12 @@ h1, h2, p {
 
 .amiibo-tile div {
   text-align: center;
+}
+
+/* Single Amiibo Page */
+
+.single-amiibo-container {
+  display: flex;   
+  justify-content: space-evenly;
+  
 }
