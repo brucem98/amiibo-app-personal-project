@@ -1,19 +1,15 @@
 import React from 'react';
-import {  
-  RouterProvider, 
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route 
-} from 'react-router-dom';
-
-import { Root } from './app/components/Root';
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import { Root } from './components/Root';
 import { AmiibosList } from './features/amiibos/AmiibosList';
+import { SingleAmiiboPage } from './features/amiibos/SingleAmiiboPage';
 
 const router = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={ <Root/> }>
-       <Route path="/" element={<AmiibosList/>}/>
+  <Route path='/' element={ <Root/> }>
+    <Route index element={ <AmiibosList/>}/>
+    <Route path='amiibos/:name/:id' element={ <SingleAmiiboPage/> }/>
   </Route>
-)) 
+))
 
 function App() {
   return (

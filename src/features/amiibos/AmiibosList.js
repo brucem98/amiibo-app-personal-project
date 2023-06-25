@@ -9,7 +9,8 @@ export const AmiibosList = () => {
     const renderedAmiibos = amiibos.map(amiibo => (
         <article key={amiibo.id} className="amiibo-tile">
             <Link to= 
-                {amiibo.name.concat(' amiibo ', amiibo.gameSeries).replaceAll(' ', '-').toLowerCase()}
+                // {`/amiibos/${amiibo.name.concat(' amiibo ', amiibo.gameSeries).replaceAll(' ', '-').toLowerCase()}`}
+                {`/amiibos/${amiibo.name.replaceAll(' ', '')}/${amiibo.id}`}
                 className='single-amiibo-link'
             >
             <h3>{amiibo.name}</h3>
