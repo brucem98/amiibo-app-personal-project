@@ -17,7 +17,7 @@ export const AmiibosList = () => {
             <img src={amiibo.image} alt={`${amiibo.name} Amiibo`}/>
             <div>
                 <p>Game Series: <span className='info-style'>{amiibo.gameSeries}</span></p>
-                <p>Amiibo Series: <span className='info-style'><strong>{amiibo.amiiboSeries}</strong></span></p>
+                <p>Amiibo Series: <span className='info-style'>{amiibo.amiiboSeries}</span></p>
             </div>
             </Link>
         </article>
