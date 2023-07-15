@@ -8,8 +8,12 @@ export const favoritesSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {
-        
+        addFavorite: (state, action) => {
+            const amiiboIdToAdd = action.payload
+            state.push(amiiboIdToAdd);
+        }
     }
 })
 
-export default favoritesSlice.reducer
+export const { addFavorite } = favoritesSlice.actions;
+export default favoritesSlice.reducer;
