@@ -5,15 +5,19 @@ const initialState = [
 ]
 
 export const favoritesSlice = createSlice({
-    name: 'posts',
+    name: 'favorites',
     initialState,
     reducers: {
         addFavorite: (state, action) => {
-            const amiiboIdToAdd = action.payload
+            const amiiboIdToAdd = action.payload;
             state.push(amiiboIdToAdd);
+        },
+        removeFavorite: (state, action) => {
+            const amiiboIdToRemove = action.payload;
+            return state.filter((id) => id !== amiiboIdToRemove);
         }
     }
 })
 
-export const { addFavorite } = favoritesSlice.actions;
+export const { addFavorite, removeFavorite } = favoritesSlice.actions;
 export default favoritesSlice.reducer;

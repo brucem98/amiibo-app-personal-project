@@ -52,7 +52,7 @@ const initialState = [
 ]
 
 export const amiibosSlice = createSlice({
-    name: 'posts',
+    name: 'amiibos',
     initialState,
     reducers: {
 
