@@ -8,7 +8,7 @@ export const Header = () => {
       <header className='header-container'>
         <img src={logo} alt='Amiibo Logo'/>
         <nav>
-          <NavLink to=''>Favorites</NavLink>
+          <NavLink to='/amiibos/favorites'>Favorites</NavLink>
           <NavLink to=''>Go Back</NavLink>
         </nav>
       </header> 

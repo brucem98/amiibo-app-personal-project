@@ -31,10 +31,8 @@ export const AmiibosList = () => {
     ))
  
     return (
-        <>
-            <section className="amiibo-tiles-container">
-                {renderedAmiibos}
-            </section>
-        </>
+        <section className="amiibo-tiles-container">
+            {renderedAmiibos}
+        </section>   
     )
 }
