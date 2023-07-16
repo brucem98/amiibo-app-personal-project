@@ -10,6 +10,11 @@ html {
 .main-section {
   width: 70%;
   margin: 0 auto;
+  
+}
+
+.header-background {
+  background-color: #4A71B6;
 }
 
 /* Header */
@@ -96,9 +101,9 @@ html {
   width: 90%;
   margin: 5rem auto;
   justify-content: space-evenly;
-  border: 3px solid #d0d0d0;
+  border: 3px solid #4A71B6;
   border-radius: 30px;
-  background: linear-gradient(to bottom, #d0d0d0, white )
+  background: linear-gradient(to bottom, #6499F6, white )
 }
 
 .single-amiibo-image {

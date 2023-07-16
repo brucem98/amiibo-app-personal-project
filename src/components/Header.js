@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 export const Header = () => {
     return (
-      <header className='header-container'>
+      <header className='header-container header-background'>
         <img src={logo} alt='Amiibo Logo'/>
         <nav>
           <NavLink to='/amiibos/favorites'>Favorites</NavLink>
