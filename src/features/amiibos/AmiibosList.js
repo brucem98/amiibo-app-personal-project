@@ -3,11 +3,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { FavoriteButton } from './FavoriteButton'
 
-export const AmiibosList = () => {
-    const amiibos = useSelector(state => state.amiibos)
-
-    const renderedAmiibos = amiibos.map(amiibo => (
-        <article key={amiibo.id} className="amiibo-tile">
+export const AmiiboExcerpt = ({ amiibo }) => {
+    return (
+        <article className="amiibo-tile">
             <h3>{amiibo.name}</h3>
             <FavoriteButton amiibo={amiibo}/>
             <img src={amiibo.image} alt={`${amiibo.name} Amiibo`}/>
@@ -22,9 +20,16 @@ export const AmiibosList = () => {
                 <button>View Amiibo</button>
             </Link>
         </article>
-    ))
-    console.log(amiibos)
+    )
+}
 
+export const AmiibosList = () => {
+    const amiibos = useSelector(state => state.amiibos)
+
+    const renderedAmiibos = amiibos.map(amiibo => (
+        <AmiiboExcerpt key={amiibo.id} amiibo={amiibo} />
+    ))
+ 
     return (
         <>
             <section className="amiibo-tiles-container">
