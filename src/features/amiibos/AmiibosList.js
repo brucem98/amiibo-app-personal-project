@@ -24,15 +24,32 @@ export const AmiiboExcerpt = ({ amiibo }) => {
 }
 
 export const AmiibosList = () => {
+    const [query, setQuery] = useState('');
+
     const amiibos = useSelector(state => state.amiibos)
 
-    const renderedAmiibos = amiibos.map(amiibo => (
+    const filteredAmiibos = amiibos.filter(amiibo => 
+        amiibo.name.toLowerCase().includes(query.toLowerCase()) ||
+        amiibo.gameSeries.toLowerCase().includes(query.toLowerCase()) ||
+        amiibo.amiiboSeries.toLowerCase().includes(query.toLowerCase())
+    )
+
+    const renderedAmiibos = filteredAmiibos.map(amiibo => (
         <AmiiboExcerpt key={amiibo.id} amiibo={amiibo} />
     ))
- 
+
     return (
-        <section className="amiibo-tiles-container">
-            {renderedAmiibos}
-        </section>   
+        <>
+            <input
+                type='text'
+                placeholder='Search for Amiibos, Amiibo Series, or Game Series!'
+                className='search-bar'
+                value = {query}
+                onChange={(e) => setQuery(e.target.value)}
+            />
+            <section className="amiibo-tiles-container">
+                {renderedAmiibos}
+            </section> 
+        </>  
     )
 }
