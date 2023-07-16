@@ -9,7 +9,7 @@ export const AmiibosList = () => {
     const renderedAmiibos = amiibos.map(amiibo => (
         <article key={amiibo.id} className="amiibo-tile">
             <h3>{amiibo.name}</h3>
-            <FavoriteButton amiiboId={amiibo.id}/>
+            <FavoriteButton amiibo={amiibo}/>
             <img src={amiibo.image} alt={`${amiibo.name} Amiibo`}/>
             <div>
                 <p>Game Series: <span className='info-style'>{amiibo.gameSeries}</span></p>
@@ -22,9 +22,6 @@ export const AmiibosList = () => {
                 <button>View Amiibo</button>
             </Link>
         </article>
-    
-   
-        
     ))
     console.log(amiibos)
 

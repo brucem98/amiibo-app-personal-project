@@ -9,12 +9,12 @@ export const favoritesSlice = createSlice({
     initialState,
     reducers: {
         addFavorite: (state, action) => {
-            const amiiboIdToAdd = action.payload;
-            state.push(amiiboIdToAdd);
+            const amiiboToAdd = action.payload;
+            state.push(amiiboToAdd);
         },
         removeFavorite: (state, action) => {
-            const amiiboIdToRemove = action.payload;
-            return state.filter((id) => id !== amiiboIdToRemove);
+            const amiiboToRemove = action.payload;
+            return state.filter((amiibo) => amiibo.id !== amiiboToRemove.id);
         }
     }
 })

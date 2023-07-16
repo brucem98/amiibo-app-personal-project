@@ -4,19 +4,19 @@ import { addFavorite, removeFavorite } from '../favorites/favoritesSlice'
 import unfavoritestar from '../../resources/images/unfavorite-star.png'
 import favoritestar from '../../resources/images/favorite-star.png'
 
-export const FavoriteButton = ({ amiiboId }) => {
+export const FavoriteButton = ({ amiibo }) => {
     const favoriteAmiibos = useSelector(state => state.favorites)
     const dispatch = useDispatch();
 
     console.log('hello there' , favoriteAmiibos)
 
-    const isFavorite = favoriteAmiibos.includes(amiiboId);
+    const isFavorite = favoriteAmiibos.includes(amiibo);
 
     const handleToggleFavorite = () => {
         if (isFavorite) {
-            dispatch(removeFavorite(amiiboId));
+            dispatch(removeFavorite(amiibo));
         } else {
-            dispatch(addFavorite(amiiboId));
+            dispatch(addFavorite(amiibo));
         }
     };
 
