@@ -5,6 +5,7 @@ import au from '../../resources/images/au-flag-icon.png';
 import eu from '../../resources/images/eu-flag-icon.png';
 import jp from '../../resources/images/jp-flag-icon.png';
 import na from '../../resources/images/na-flag-icon.png';
+import { FavoriteButton } from './FavoriteButton';
 
 export const SingleAmiiboPage = () => {
     const { id } = useParams();
@@ -27,6 +28,9 @@ export const SingleAmiiboPage = () => {
                     <li><img src={na} alt='NA Icon'/>{amiibo.release.na}</li>
                 </ul>  
             </section>
+            <div className='star-icon-single-amiibo-page'>
+                        <FavoriteButton amiibo={amiibo}/>
+            </div>
         </article>
     )
 }
