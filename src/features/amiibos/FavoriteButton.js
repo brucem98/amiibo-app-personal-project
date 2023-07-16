@@ -8,8 +8,6 @@ export const FavoriteButton = ({ amiibo }) => {
     const favoriteAmiibos = useSelector(state => state.favorites)
     const dispatch = useDispatch();
 
-    console.log('hello there' , favoriteAmiibos)
-
     const isFavorite = favoriteAmiibos.includes(amiibo);
 
     const handleToggleFavorite = () => {
@@ -21,13 +19,23 @@ export const FavoriteButton = ({ amiibo }) => {
     };
 
     return (
-    <button
-        type='button'
-        className='favorite-button'
-        onClick={handleToggleFavorite}
-    >
-        {isFavorite ? <img src={favoritestar} alt='Gold Star'/> : <img src={unfavoritestar} alt='Empty Star'/>}
-    </button>
-  )
+    <>
+        {
+            isFavorite ? 
+            <img 
+                src={favoritestar} 
+                alt='Gold Star' 
+                className='star-icon'
+                onClick={handleToggleFavorite}
+            /> : 
+            <img 
+                src={unfavoritestar} 
+                alt='Empty Star' 
+                className='star-icon'
+                onClick={handleToggleFavorite}
+            />
+        } 
+    </>
+    )
 }
 
