@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { FavoriteButton } from './FavoriteButton'
+import { selectAllAmiibos } from './amiibosSlice'
 
 export const AmiiboExcerpt = ({ amiibo }) => {
     return (
@@ -28,7 +29,7 @@ export const AmiiboExcerpt = ({ amiibo }) => {
 export const AmiibosList = () => {
     const [query, setQuery] = useState('');
 
-    const amiibos = useSelector(state => state.amiibos)
+    const amiibos = useSelector(selectAllAmiibos)
 
     const filteredAmiibos = amiibos.filter(amiibo => 
         amiibo.name.toLowerCase().includes(query.toLowerCase()) ||

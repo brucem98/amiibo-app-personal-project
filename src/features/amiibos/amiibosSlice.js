@@ -51,6 +51,9 @@ const initialState = [
     }
 ]
 
+//fetchAmiibos Thunk
+
+
 export const amiibosSlice = createSlice({
     name: 'amiibos',
     initialState,
@@ -61,3 +64,5 @@ export const amiibosSlice = createSlice({
 })
 
 export default amiibosSlice.reducer
+
+export const selectAllAmiibos = state => state.amiibos
