@@ -31,7 +31,7 @@ export const AmiibosList = () => {
     const amiibos = useSelector(selectAllAmiibos)
 
     const amiibosStatus = useSelector(state =>state.amiibos.status)
-
+   
     const [query, setQuery] = useState('');
 
     useEffect(() => {
