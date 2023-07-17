@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, nanoid } from '@reduxjs/toolkit'
 
 const initialState = {
     amiibos: [],
@@ -10,10 +10,14 @@ const initialState = {
 export const fetchAmiibos = createAsyncThunk('amiibos/fetchAmiibos', async () => {
     const response = await fetch('https://www.amiiboapi.com/api/amiibo/');
     const data = await response.json();
-    return data;
-});
+    
+    const amiibosWithUniqueIds = data.amiibo.map(amiibo => ({
+        ...amiibo,
+        id: nanoid()
+    }))
 
-console.log('testing fetch request',fetchAmiibos())
+    return amiibosWithUniqueIds;
+});
 
 export const amiibosSlice = createSlice({
     name: 'amiibos',
@@ -28,7 +32,7 @@ export const amiibosSlice = createSlice({
             })
             .addCase(fetchAmiibos.fulfilled, (state, action) => {
                 state.status = 'succeeded'
-                state.amiibos = state.amiibos.concat(action.payload.amiibo)
+                state.amiibos = state.amiibos.concat(action.payload);
             })
             .addCase(fetchAmiibos.rejected, (state, action) => {
                 state.status = 'failed'
