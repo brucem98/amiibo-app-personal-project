@@ -9,7 +9,7 @@ import { FavoriteButton } from './FavoriteButton';
 
 export const SingleAmiiboPage = () => {
     const { id } = useParams();
-    const amiibo = useSelector(state => state.amiibos).find(amiibo => amiibo.id === id)
+    const amiibo = useSelector(state => state.amiibos.amiibos).find(amiibo => amiibo.id === id)
    
     return (
         <article className='single-amiibo-container'>
