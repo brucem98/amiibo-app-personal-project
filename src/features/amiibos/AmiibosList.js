@@ -56,7 +56,8 @@ export const AmiibosList = () => {
     const filteredAmiibos = useMemo(() => 
             amiibos.filter(amiibo =>
                 amiibo.name.toLowerCase().includes(query.toLowerCase()) ||
-                amiibo.gameSeries.toLowerCase().includes(query.toLowerCase())
+                amiibo.gameSeries.toLowerCase().includes(query.toLowerCase()) ||
+                amiibo.amiiboSeries.toLowerCase().includes(query.toLowerCase())
             ),
             [amiibos, query]
     )
@@ -83,7 +84,7 @@ export const AmiibosList = () => {
         <>
             <input
                 type='text'
-                placeholder='Search for Amiibos!'
+                placeholder='Search by Name, Game Series, or Amiibo Series!'
                 className='search-bar'
                 value = {query}
                 onChange={(e) => setQuery(e.target.value)}
