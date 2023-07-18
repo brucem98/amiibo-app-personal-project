@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Spinner } from '../../components/Spinner'
 import { FavoriteButton } from './FavoriteButton'
+import { Pagination } from '../../components/Pagination'
 import { fetchAmiibos, selectAllAmiibos } from './amiibosSlice'
 
 
@@ -31,11 +32,12 @@ export const AmiiboExcerpt = ({ amiibo }) => {
 export const AmiibosList = () => {
     const dispatch = useDispatch()
     const amiibos = useSelector(selectAllAmiibos)
-
     const amiibosStatus = useSelector(state => state.amiibos.status)
     const error = useSelector(state => state.amiibos.error)
    
     const [query, setQuery] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const amiibosPerPage = 20;
 
     useEffect(() => {
         if (amiibosStatus === 'idle') {
@@ -43,41 +45,53 @@ export const AmiibosList = () => {
         }
     }, [amiibosStatus, dispatch])
 
-    const filteredAmiibos = amiibos.filter(amiibo => 
-         amiibo.name.toLowerCase().includes(query.toLowerCase()) 
-        // || amiibo.gameSeries.toLowerCase().includes(query.toLowerCase()) ||
-        // amiibo.amiiboSeries.toLowerCase().includes(query.toLowerCase())
-    )
+    const handlePageChange = page => {
+        setCurrentPage(page);
+    }
+
+    const filteredAmiibos = amiibos.filter(amiibo =>
+        amiibo.name.toLowerCase().includes(query.toLowerCase()) ||
+        amiibo.gameSeries.toLowerCase().includes(query.toLowerCase())
+      );
+
+    const indexOfLastAmiibo = currentPage * amiibosPerPage;
+    const indexOfFirstAmiibo = indexOfLastAmiibo - amiibosPerPage;
+    const currentAmiibos = filteredAmiibos.slice(indexOfFirstAmiibo, indexOfLastAmiibo);
 
     let content
+
+    const totalPages = Math.ceil(filteredAmiibos.length / amiibosPerPage)
+
 
     if (amiibosStatus === 'loading') {
         content = <Spinner text="Loading..." />
     } else if (amiibosStatus === 'succeeded') {
-        content = filteredAmiibos.map(amiibo => (
+        content = currentAmiibos.map(amiibo => (
             <AmiiboExcerpt key={amiibo.id} amiibo={amiibo}/>
         ))
     } else if (amiibosStatus === 'failed') {
         content = <div>{error}</div>
     }
 
-
-    // const renderedAmiibos = filteredAmiibos.map(amiibo => (
-    //     <AmiiboExcerpt key={amiibo.id} amiibo={amiibo} />
-    // ))
-
     return (
         <>
             <input
                 type='text'
-                placeholder='Search for Amiibos, Amiibo Series, or Game Series!'
+                placeholder='Search for Amiibos!'
                 className='search-bar'
                 value = {query}
                 onChange={(e) => setQuery(e.target.value)}
             />
+
             <section className="amiibo-tiles-container">
                 {content}
             </section> 
+
+            <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+            />
         </>  
     )
 }
