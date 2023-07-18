@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Spinner } from '../../components/Spinner'
@@ -45,23 +45,29 @@ export const AmiibosList = () => {
         }
     }, [amiibosStatus, dispatch])
 
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [query])
+
     const handlePageChange = page => {
         setCurrentPage(page);
     }
 
-    const filteredAmiibos = amiibos.filter(amiibo =>
-        amiibo.name.toLowerCase().includes(query.toLowerCase()) ||
-        amiibo.gameSeries.toLowerCase().includes(query.toLowerCase())
-      );
+    const filteredAmiibos = useMemo(() => 
+            amiibos.filter(amiibo =>
+                amiibo.name.toLowerCase().includes(query.toLowerCase()) ||
+                amiibo.gameSeries.toLowerCase().includes(query.toLowerCase())
+            ),
+            [amiibos, query]
+    )
+
+    const totalPages = Math.ceil(filteredAmiibos.length / amiibosPerPage)
 
     const indexOfLastAmiibo = currentPage * amiibosPerPage;
     const indexOfFirstAmiibo = indexOfLastAmiibo - amiibosPerPage;
     const currentAmiibos = filteredAmiibos.slice(indexOfFirstAmiibo, indexOfLastAmiibo);
 
     let content
-
-    const totalPages = Math.ceil(filteredAmiibos.length / amiibosPerPage)
-
 
     if (amiibosStatus === 'loading') {
         content = <Spinner text="Loading..." />
