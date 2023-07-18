@@ -44,9 +44,9 @@ export const AmiibosList = () => {
     }, [amiibosStatus, dispatch])
 
     const filteredAmiibos = amiibos.filter(amiibo => 
-        amiibo.name.toLowerCase().includes(query.toLowerCase()) ||
-        amiibo.gameSeries.toLowerCase().includes(query.toLowerCase()) ||
-        amiibo.amiiboSeries.toLowerCase().includes(query.toLowerCase())
+         amiibo.name.toLowerCase().includes(query.toLowerCase()) 
+        // || amiibo.gameSeries.toLowerCase().includes(query.toLowerCase()) ||
+        // amiibo.amiiboSeries.toLowerCase().includes(query.toLowerCase())
     )
 
     let content
