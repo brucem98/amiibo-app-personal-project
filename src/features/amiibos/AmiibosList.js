@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { Spinner } from '../../components/Spinner'
 import { FavoriteButton } from './FavoriteButton'
 import { fetchAmiibos, selectAllAmiibos } from './amiibosSlice'
+
 
 export const AmiiboExcerpt = ({ amiibo }) => {
     return (
@@ -30,7 +32,8 @@ export const AmiibosList = () => {
     const dispatch = useDispatch()
     const amiibos = useSelector(selectAllAmiibos)
 
-    const amiibosStatus = useSelector(state =>state.amiibos.status)
+    const amiibosStatus = useSelector(state => state.amiibos.status)
+    const error = useSelector(state => state.amiibos.error)
    
     const [query, setQuery] = useState('');
 
@@ -46,9 +49,22 @@ export const AmiibosList = () => {
         amiibo.amiiboSeries.toLowerCase().includes(query.toLowerCase())
     )
 
-    const renderedAmiibos = filteredAmiibos.map(amiibo => (
-        <AmiiboExcerpt key={amiibo.id} amiibo={amiibo} />
-    ))
+    let content
+
+    if (amiibosStatus === 'loading') {
+        content = <Spinner text="Loading..." />
+    } else if (amiibosStatus === 'succeeded') {
+        content = filteredAmiibos.map(amiibo => (
+            <AmiiboExcerpt key={amiibo.id} amiibo={amiibo}/>
+        ))
+    } else if (amiibosStatus === 'failed') {
+        content = <div>{error}</div>
+    }
+
+
+    // const renderedAmiibos = filteredAmiibos.map(amiibo => (
+    //     <AmiiboExcerpt key={amiibo.id} amiibo={amiibo} />
+    // ))
 
     return (
         <>
@@ -60,7 +76,7 @@ export const AmiibosList = () => {
                 onChange={(e) => setQuery(e.target.value)}
             />
             <section className="amiibo-tiles-container">
-                {renderedAmiibos}
+                {content}
             </section> 
         </>  
     )

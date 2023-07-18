@@ -36,7 +36,7 @@ export const amiibosSlice = createSlice({
             })
             .addCase(fetchAmiibos.rejected, (state, action) => {
                 state.status = 'failed'
-                state.error = action.error.message
+                state.error = `ERROR! ${action.error.message}`
             })
     }
 
