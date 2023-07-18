@@ -23,6 +23,7 @@ html {
   position: absolute;
   top: 1.5rem;
   right: 0rem;
+  z-index: 1;
 }
 
 .star-icon-single-amiibo-page {
