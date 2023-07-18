@@ -12,7 +12,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             {pageNumbers.map(number => (
                 <li
                     key={number}
-                    className={number === currentPage ? 'active' : ''}
+                    className={number === currentPage ? 'active-page' : 'inactive-page'}
                     onClick={() => onPageChange(number)}
                 >
                     {number}
