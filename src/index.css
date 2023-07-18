@@ -56,9 +56,17 @@ html {
   justify-content: space-evenly;
 }
 
+.header-container nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap:2rem;
+}
+
 .header-container nav a {
   text-decoration: none;
   color: black;
+  padding: 0.8rem 0.6rem;
+  border-radius: 30px;
 }
 
 /* Amiibos List  */
@@ -292,3 +300,19 @@ html {
   font-weight: bold;
   background-color: #6499F6;
 }
+
+/* Links */
+
+.activeNavLink {
+  background-color: grey;
+  color: white;
+}
+
+.inactiveNavLink:hover {
+  background-color: #DCDCDC;
+}
+
+.activeNavLink:hover {
+  background-color: #5A5A5A;
+}
+
