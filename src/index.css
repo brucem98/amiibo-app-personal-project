@@ -333,6 +333,10 @@ html {
   font-size: 1.5rem;
 }
 
+.error-page-container a {
+  color: #4A71B6;
+}
+
 .error-page-container img {
   width: 30%;
   margin: 1.5rem 0;
