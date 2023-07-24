@@ -19,7 +19,7 @@ export const fetchAmiibos = createAsyncThunk('amiibos/fetchAmiibos', async () =>
     return amiibosWithUniqueIds;
 });
 
-export const amiibosSlice = createSlice({
+ const amiibosSlice = createSlice({
     name: 'amiibos',
     initialState,
     reducers: {
