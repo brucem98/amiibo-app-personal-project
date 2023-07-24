@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import au from '../../resources/images/au-flag-icon.png';
 import eu from '../../resources/images/eu-flag-icon.png';
 import jp from '../../resources/images/jp-flag-icon.png';
@@ -11,6 +11,10 @@ export const SingleAmiiboPage = () => {
     const { id } = useParams();
     const amiibo = useSelector(state => state.amiibos.amiibos).find(amiibo => amiibo.id === id)
    
+    if(!amiibo) {
+        return <Navigate to='*' replace />
+    }
+
     return (
         <article className='single-amiibo-container'>
             <img src={amiibo.image} alt='amiibo' className='single-amiibo-image'/>
