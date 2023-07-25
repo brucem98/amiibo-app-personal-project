@@ -1,18 +1,11 @@
 import React from 'react';
 import logo from '../resources/images/Amiibo_logo.png';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleNavLinks } from './navLinks/navLinksSlice';
-
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
   const navigate = useNavigate();
   const showNavLinks = useSelector(state => state.navLinks.showNavLinks);
-  const dispatch = useDispatch();
-
-  const handleToggleNavLinks = () => {
-    dispatch(toggleNavLinks())
-  };
 
   return (
     <header className='header-container header-background'>
