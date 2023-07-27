@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react'
+import './css_pages/AmiibosList.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Spinner } from '../../components/Spinner'

@@ -1,0 +1,27 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 2.5rem 0;
+}
+
+.active-page {
+  background-color: #4A71B6;
+  padding: 0.5rem;
+}
+
+.inactive-page {
+  padding: 0.5rem;
+}
+
+.active-page, .inactive-page:hover {
+  cursor: pointer;
+  border: solid #36454f;
+  border-radius: 25%;
+}
+
+.inactive-page:active {
+  font-weight: bold;
+  background-color: #6499F6;
+}

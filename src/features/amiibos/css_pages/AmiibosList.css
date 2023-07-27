@@ -1,0 +1,62 @@
+
+.amiibo-tile {
+  display: block;
+  color: gray;
+  text-align: center;
+  width: 20rem;
+  margin-top: 2rem;
+  border: 3px solid transparent;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.amiibo-tile h3 {
+  text-align: center;
+  font-size: 1.35rem;
+}
+
+
+.amiibo-tile a {
+  text-decoration: none;
+  color: black;
+}
+
+.amiibo-tile-img {
+  height: 15rem;
+  max-width: 20rem;
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  position:relative;
+  top:0;
+  left:0;
+}
+
+.star-icon-amiibo-tile {
+  width: 15%;
+  position: absolute;
+  top: 1.5rem;
+  right: 0rem;
+  z-index: 1;
+}
+
+/* Amiibos List  */
+
+
+
+/* .amiibo-tile:hover {
+  transition: border 0.55s;
+  border: 3px solid #d0d0d0;
+}
+
+.amiibo-tile:active {
+  margin-top: 0rem;
+} */
+
+
+/* .amiibo-tile div {
+  text-align: center;
+} */

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './css_pages/Error404.css'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toggleNavLinks } from './navLinks/navLinksSlice';

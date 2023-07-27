@@ -1,4 +1,5 @@
 import React from 'react'
+import './css_pages/FavoriteButton.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { addFavorite, removeFavorite } from '../favorites/favoritesSlice'
 import unfavoritestar from '../../resources/images/unfavorite-star.png'

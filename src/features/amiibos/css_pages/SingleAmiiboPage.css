@@ -1,0 +1,68 @@
+.single-amiibo-container {
+    display: flex;   
+    width: 90%;
+    margin: 5rem auto;
+    justify-content: space-evenly;
+    border: 3px solid #4A71B6;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, #6499F6, white );
+    position: relative;
+}
+
+.single-amiibo-image {
+    padding: 2rem 0;
+    object-fit: contain;
+}
+
+.single-amiibo-info {
+    margin: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+  
+.single-info-1 {
+    margin-bottom: 2.5rem;
+}
+
+  
+.single-info-1 h2, h3{
+    text-align: left;
+}
+
+.single-info-1 h2 {
+    margin-bottom: 1rem;
+    font-size: 2.75rem;
+    font-style: oblique;
+    color: #36454f;  
+}
+
+.releases-title {
+    margin-bottom: 1.10rem;
+}
+
+.single-info-1 h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+  
+.single-info-2 li{
+    list-style: none;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+} 
+  
+.single-info-2 li img{
+    vertical-align: middle;
+    margin-right: 1rem;
+    width: 2.5rem;
+    border: 2px solid black;
+    border-radius: 50%;
+} 
+
+
+.star-icon-single-amiibo-page {
+    width: 10%;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}

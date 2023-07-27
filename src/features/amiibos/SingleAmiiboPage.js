@@ -1,11 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-import { Navigate, useParams } from 'react-router-dom';
-import au from '../../resources/images/au-flag-icon.png';
-import eu from '../../resources/images/eu-flag-icon.png';
-import jp from '../../resources/images/jp-flag-icon.png';
-import na from '../../resources/images/na-flag-icon.png';
-import { FavoriteButton } from './FavoriteButton';
+import './css_pages/SingleAmiiboPage.css'
+import { useSelector } from 'react-redux'
+import { Navigate, useParams } from 'react-router-dom'
+import au from '../../resources/images/au-flag-icon.png'
+import eu from '../../resources/images/eu-flag-icon.png'
+import jp from '../../resources/images/jp-flag-icon.png'
+import na from '../../resources/images/na-flag-icon.png'
+import { FavoriteButton } from './FavoriteButton'
 
 export const SingleAmiiboPage = () => {
     const { id } = useParams();
