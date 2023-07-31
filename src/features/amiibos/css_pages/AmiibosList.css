@@ -1,9 +1,8 @@
-
 .amiibo-tile {
   display: block;
   color: gray;
   text-align: center;
-  width: 20rem;
+  width: 22rem;
   margin-top: 2rem;
   border: 3px solid transparent;
   position: relative;
@@ -30,9 +29,9 @@
   background-size: cover;
   margin-top: 1rem;
   margin-bottom: 0.25rem;
-  position:relative;
-  top:0;
-  left:0;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .star-icon-amiibo-tile {

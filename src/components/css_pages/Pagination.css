@@ -6,22 +6,41 @@
   margin: 2.5rem 0;
 }
 
+.pagination li {
+  min-width: 1rem;
+  text-align: center;
+}
+
 .active-page {
   background-color: #4A71B6;
   padding: 0.5rem;
+  margin: 0.2rem;
 }
 
 .inactive-page {
   padding: 0.5rem;
+  margin: 0.2rem;
 }
 
-.active-page, .inactive-page:hover {
+.active-page,
+.inactive-page:hover {
   cursor: pointer;
-  border: solid #36454f;
+  outline: solid #36454f;
   border-radius: 25%;
 }
 
 .inactive-page:active {
   font-weight: bold;
   background-color: #6499F6;
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 1450px) {
+  .pagination {
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
 }
