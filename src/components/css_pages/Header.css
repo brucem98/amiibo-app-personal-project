@@ -1,7 +1,16 @@
 .header-container {
     display: inline-flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width:100%;
+}
+
+.header-img-container {
+    width: 38rem;
+    height: 200px;
+    background-size: contain;
+    background-image: url('../../resources/images/amiibo_logo.png');
+    background-position: cover;
+    background-repeat: no-repeat;
 }
 
 .header-container img {
@@ -32,3 +41,11 @@
     background-color: #4A71B6;
     background: linear-gradient(to bottom, #4A71B6, #6499F6);
 }
+
+
+/* Media Queries */
+@media only screen and (max-width: 1414px) {
+  .header-container img {
+    background: url('../../resources/images/amiibo_logo_small.png')
+  }
+} 

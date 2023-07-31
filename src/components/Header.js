@@ -1,6 +1,6 @@
 import React from 'react';
 import './css_pages/Header.css';
-import logo from '../resources/images/Amiibo_logo.png';
+import logo from '../resources/images/amiibo_logo.png';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -11,7 +11,9 @@ export const Header = () => {
   return (
     <header className='header-container header-background'>
       <Link to= {'/'}>
-        <img src={logo} alt='Amiibo Logo' className='inactiveNavLink'/>
+      <div className='header-img-container inactiveNavLink'>
+        {/* <img src={logo} alt='Amiibo Logo' className='inactiveNavLink'/> */}
+      </div>
       </Link>
       {showNavLinks && (
         <nav>
