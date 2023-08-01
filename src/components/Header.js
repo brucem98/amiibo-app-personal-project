@@ -1,6 +1,5 @@
 import React from 'react';
 import './css_pages/Header.css';
-import logo from '../resources/images/amiibo_logo.png';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
