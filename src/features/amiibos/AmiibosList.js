@@ -83,18 +83,18 @@ export const AmiibosList = () => {
 
     return (
         <>
-            <input
-                type='text'
-                placeholder='Search by Name, Game Series, or Amiibo Series!'
-                className='search-bar'
-                value = {query}
-                onChange={(e) => setQuery(e.target.value)}
-            />
-
+            <div className='search-bar-container'>
+                <input
+                    type='text'
+                    placeholder='🔍Search by Name, Game Series, or Amiibo Series!'
+                    className='search-bar'
+                    value = {query}
+                    onChange={(e) => setQuery(e.target.value)}
+                />
+            </div>
             <section className="amiibo-tiles-container">
                 {content}
             </section> 
-
             <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}

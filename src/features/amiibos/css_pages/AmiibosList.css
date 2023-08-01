@@ -49,26 +49,30 @@
   z-index: 1;
 }
 
+.search-bar-container {
+  display:flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 .search-bar {
   font-family: 'DM Sans', sans-serif;
   font-size: 1.35rem;
   width: 35%;
-}
-
-/* Amiibos List  */
-
-
-
-/* .amiibo-tile:hover {
-  transition: border 0.55s;
-  border: 3px solid #d0d0d0;
-}
-
-.amiibo-tile:active {
-  margin-top: 0rem;
-} */
-
-
-/* .amiibo-tile div {
+  height:3rem;
   text-align: center;
-} */
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1740px) {
+  .search-bar {
+    width: 70%;
+}
+}
+
+@media only screen and (max-width: 911px) {
+  .search-bar {
+    width: 100%;
+}
+
+}
