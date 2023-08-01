@@ -8,7 +8,7 @@
     width: 30rem;
     height: 10rem;
     background-size: contain;
-    background-image: url('../../resources/images/amiibo_logo.png');
+    background-image: url('./amiibo_logo.png');
     background-position: cover;
     background-repeat: no-repeat;
 }
@@ -46,7 +46,7 @@
 /* Media Queries */
 @media only screen and (max-width: 870px) {
     .header-img-container {
-        background: url('../../resources/images/amiibo_logo_small.png');
+        background: url('./amiibo_logo_small.png');
         width: 10rem;
         height: 10rem;
         background-size: contain;
