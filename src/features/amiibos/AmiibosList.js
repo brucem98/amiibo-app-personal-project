@@ -86,7 +86,7 @@ export const AmiibosList = () => {
             <div className='search-bar-container'>
                 <input
                     type='text'
-                    placeholder='🔍Search by Name, Game Series, or Amiibo Series!'
+                    placeholder='🔍Search by name, game series, or amiibo series!'
                     className='search-bar'
                     value = {query}
                     onChange={(e) => setQuery(e.target.value)}
