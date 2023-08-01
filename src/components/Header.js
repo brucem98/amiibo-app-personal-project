@@ -11,7 +11,6 @@ export const Header = () => {
     <header className='header-container header-background'>
       <Link to= {'/'}>
       <div className='header-img-container inactiveNavLink'>
-        {/* <img src={logo} alt='Amiibo Logo' className='inactiveNavLink'/> */}
       </div>
       </Link>
       {showNavLinks && (
