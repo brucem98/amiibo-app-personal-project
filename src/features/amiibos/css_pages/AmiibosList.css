@@ -13,6 +13,13 @@
 .amiibo-tile h3 {
   text-align: center;
   font-size: 1.35rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.amiibo-tile p {
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -40,6 +47,12 @@
   top: 1.5rem;
   right: 0rem;
   z-index: 1;
+}
+
+.search-bar {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.35rem;
+  width: 35%;
 }
 
 /* Amiibos List  */

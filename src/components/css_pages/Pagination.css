@@ -4,6 +4,7 @@
   justify-content: space-evenly;
   list-style: none;
   margin: 2.5rem 0;
+  font-family: 'DM Sans', sans-serif;;
 }
 
 .pagination li {

@@ -21,6 +21,10 @@
     flex-direction: column;
 }
 
+.single-info-1, .single-info-2 {
+    font-family: 'Poppins', sans-serif;
+}
+
 .single-info-1 {
     margin-bottom: 2.5rem;
 }
@@ -35,11 +39,14 @@ h3 {
     margin-bottom: 1rem;
     font-size: 2.75rem;
     font-style: oblique;
+    font-family: 'DM Sans', sans-serif;
     color: #36454f;
 }
 
 .releases-title {
     margin-bottom: 1.10rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.35rem;
 }
 
 .single-info-1 h3 {

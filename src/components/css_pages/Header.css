@@ -25,6 +25,9 @@
     list-style: none;
     display: inline-flex;
     gap: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.60rem;
 }
 
 .header-container nav a {

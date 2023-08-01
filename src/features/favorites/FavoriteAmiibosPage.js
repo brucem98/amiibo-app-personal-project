@@ -1,6 +1,6 @@
 import React from 'react'
+import './css_pages/FavoriteAmiibosPage.css'
 import { useSelector } from 'react-redux'
-
 import { AmiiboExcerpt } from '../amiibos/AmiibosList'
 
 export const FavoriteAmiibosPage = () => {
